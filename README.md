@@ -1,4 +1,4 @@
-# neat-send
+# neat-request
 Light-weight Promise wrap for raw http.request
 
 ### Install
