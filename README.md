@@ -3,13 +3,13 @@ Light-weight Promise wrap for raw http.request
 
 ### Install
 ```shell
-npm install neat-send
+npm install neat-request
 ```
 
-### Hello Send
+### Hello Request
 ```js
 // Now is mostly used for proxy
-const send = require('neat-send');
+const request = require('neat-request');
 
 const server = http.createServer(async function(sreq, sres) {
   const url_parts = url.parse(sreq.url);
@@ -25,7 +25,7 @@ const server = http.createServer(async function(sreq, sres) {
     // timeout(Num): If None, Default is 15sec
     // toJSON(bool): Default is False.
   };
-  const cres = await send(opts, ext);
+  const cres = await request(opts, ext);
   sres.writeHead(cres.statusCode, cres.headers);
   cres.pipe(sres); // pipe client to server response
 });
