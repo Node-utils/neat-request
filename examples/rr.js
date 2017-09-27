@@ -10,15 +10,15 @@ const arr = [{
   },
 ];
 
-const request = request.createClient({
-  path: '/path'
+const send = request.createClient({
+  path: '/path',
 }, {
   rr: arr
 });
 
 (async() => {
-  for (let i = 0; i < 100; i++) {
-    await request();
+  for (let i = 0; i < 10; i++) {
+    await send();
   }
   console.log('done')
 })()
